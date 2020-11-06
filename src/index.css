@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Main-Font";
+    font-weight: 300;
+    src: url('../src/font/NotoSansCJKkr-Regular.otf');
+}
+
+* {
+    font-family: Main-Font;
+}
+
+body {
+    margin: 0;
+    cursor: default;
+    background-color: white;
+}
+
+input {
+    outline: none;
+}
