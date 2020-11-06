@@ -10,7 +10,7 @@ const Header = () => {
                 <div>▼</div>
                 <div>전체</div>
             </S.Range>
-            <S.Search placeholder="찾으실 검색어를 입력해주세요" />
+            <S.Search placeholder="검색어를 입력해주세요" />
             <S.SearchImg>
                 <img src={ Search } alt="검색" />
             </S.SearchImg>
