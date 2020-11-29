@@ -12,7 +12,7 @@ export const Title = style.div `
     width: 127px;
     text-align: center;
     margin-bottom: 22px;
-    margin-left: 217px;
+    margin-left: 20vw;
 `;
 export const BestSeller = style.div `
     font-size: 21px;
