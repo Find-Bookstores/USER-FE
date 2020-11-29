@@ -5,20 +5,20 @@ export const Size = style.div `
     min-width: 1440px;
     height: 52px;
     background-color: #7B91FF;
-    > div {
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
-    > div > a > img:first-child {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    > a > img:first-child {
         width: 50px;
-        margin-left: 180px;
         margin-top: 10px;
+    }
+    > div:nth-child(2) {
+        display: flex;
     }
 `;
 export const List = style.div `
     font-size: 12px;
-    margin-right: 120px;
     > a {
         color: black;
     }
@@ -49,8 +49,8 @@ export const Range = style.div `
     border: 1px solid black;
     border-right: none;
     align-items: center;
-    margin-left: 118px;
-    > div:last-child {
+    z-index: 100;
+    > div:nth-child(2) {
         font-size: 7px;
         margin-left: 10px;
         margin-right: 7px;
@@ -70,7 +70,9 @@ export const TypeUl = style.ul `
     border-radius: 3px;
     background-color: white;
     padding: 5px 0 0 0;
-    margin: -15px 0 0 348px;
+    margin: 0;
+    position: absolute;
+    top: 37px;
     display: ${({boolean}) => boolean ? 'block' : 'none'};
 `;
 export const TypeLi = style.li `
@@ -86,7 +88,6 @@ export const SearchImg = style.div `
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 180px;
     > img {
         width: 7.5px;
         height: 8px;

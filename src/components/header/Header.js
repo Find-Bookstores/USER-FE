@@ -26,33 +26,33 @@ const Header = () => {
 
     return (
         <S.Size>
+            <Link to='/'>
+                <img src={ Logo } alt="탐책"/>
+            </Link>
             <div>
-                <Link to='/'>
-                    <img src={ Logo } alt="탐책"/>
-                </Link>
                 <S.Range onClick={onTypeBtnClick}>
                     <S.More boolean={isTypeClick}>▼</S.More>
                     <div>{ searchType }</div>
+                    <S.TypeUl boolean={isTypeClick}>
+                        <S.TypeLi data-type='all' onClick={onTypeClick}>전체</S.TypeLi>
+                        <S.TypeLi data-type='book' onClick={onTypeClick}>책</S.TypeLi>
+                        <S.TypeLi data-type='bookStore' onClick={onTypeClick}>서점</S.TypeLi>
+                    </S.TypeUl>
                 </S.Range>
                 <S.Search placeholder="검색어를 입력해주세요" />
                 <S.SearchImg>
                     <img src={ Search } alt="검색" />
                 </S.SearchImg>
-                <S.List>
-                    <Link to='/upload/book'>책 등록</Link>
-                </S.List>
-                <S.List>
-                    <Link to='/mypage/user'>마이페이지</Link>
-                </S.List>
-                <S.List>
-                    <Link to='/login'>로그인</Link>
-                </S.List>
             </div>
-            <S.TypeUl boolean={isTypeClick}>
-                    <S.TypeLi data-type='all' onClick={onTypeClick}>전체</S.TypeLi>
-                    <S.TypeLi data-type='book' onClick={onTypeClick}>책</S.TypeLi>
-                    <S.TypeLi data-type='bookStore' onClick={onTypeClick}>서점</S.TypeLi>
-            </S.TypeUl>
+            <S.List>
+                <Link to='/upload/book'>책 등록</Link>
+            </S.List>
+            <S.List>
+                <Link to='/mypage/user'>마이페이지</Link>
+            </S.List>
+            <S.List>
+                <Link to='/login'>로그인</Link>
+            </S.List>
         </S.Size>
     )
 }
