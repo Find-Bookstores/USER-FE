@@ -6,7 +6,7 @@ export const Size = style.div `
     height: calc(100vh - 104px);
     min-height: 650px;
     margin: 0 auto;
-    padding-top: 2%;
+    padding-top: 4%;
 `;
 
 // logo
