@@ -4,8 +4,8 @@ import StoreUserInfo from './StoreUserInfo';
 import BookInventory from './BookInventory';
 
 const StoreUserMyPage = () => {
-    const [isInfoBtnCLick, setIsInfoBtnClick] = useState(false);
-    const [isInventoryBtnClick, setIsInventoryBtnClick] = useState(true);
+    const [isInfoBtnCLick, setIsInfoBtnClick] = useState(true);
+    const [isInventoryBtnClick, setIsInventoryBtnClick] = useState(false);
 
     // 회원 정보 버튼 눌렀을 때
     const onInfoBtnClick = () => {
