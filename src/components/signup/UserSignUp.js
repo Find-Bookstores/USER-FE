@@ -16,8 +16,8 @@ const UserSignUp = () => {
                     alert('회원가입 성공!');
                 })
                 .catch((err) => {
-                    if(err.response.status === 409) {
-                        alert('아이디가 이미 있습니다! 다른 아이디로 바꿔주세요')
+                    if(err.status === 409) {
+                        alert('아이디가 이미 있습니다!');
                     }
                     else {
                         alert('회원가입 실패...');
@@ -25,13 +25,9 @@ const UserSignUp = () => {
                     console.log(err);
                 })
             }
-            else {
-                alert('비밀번호를 다시 확인하세요');
-            }
+            else alert('비밀번호를 다시 확인하세요');
         }
-        else {
-            alert('모든 칸을 채워주세요');
-        }
+        else alert('모든 칸을 채워주세요');
     }
 
     const checkId = e => {
