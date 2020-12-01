@@ -12,8 +12,22 @@ body {
     margin: 0;
     cursor: default;
     background-color: white;
+    min-width: 1440px;
 }
 
 input {
     outline: none;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
 }
