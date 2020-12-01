@@ -1,10 +1,15 @@
 import React from 'react'
-import Header from './components/header/Header'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import UserRouter from './routers/UserRouter';
 
 function App() {
   return (
     <>
-      <Header />
+      <Router>
+        <Switch>
+          <Route path='/' component={ UserRouter }/>
+        </Switch>
+      </Router>
     </>
   );
 }
