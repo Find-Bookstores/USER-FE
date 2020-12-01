@@ -70,14 +70,20 @@ export const InfoUl = style.ul `
     width: 678px;
     padding: 0;
     margin: 0;
-    > li:nth-child(3n) > div:first-child {
+    > li:nth-child(3) > div {
         margin-right: 103px;
     }
-    > li:nth-child(4) > div:first-child {
+    > li:nth-child(4) > div {
         margin-right: 64px;
     }
     > li:nth-child(5) > div {
+        margin-right: 103px;
+    }
+    > li:nth-child(6) > div {
         margin-right: 100px;
+    }
+    > li:nth-child(7) > div {
+        margin-right: 103px;
     }
 `;
 export const InfoLi = style.li `
