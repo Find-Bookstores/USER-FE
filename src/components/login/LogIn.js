@@ -1,8 +1,36 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './style';
 
 const LogIn = () => {
+    // const JWT_EXPIRY_TIME = 24 * 3600 * 1000;
+    const [id, setId] = useState('');
+    const [password, setPassword] = useState('');
+
+    const onLoginBtnClick = () => {
+        axios.post('http://10.156.147.138:8080/user/login', {id, password})
+        .then((res, {accessToken}) => {
+            axios.defaults.headers.common['Authorization'] = {accessToken};
+            console.log('success');
+        })
+        .catch((err) => {
+            if(err.response.status === 404) {
+                alert('존재하지 않는 아이디입니다');
+            }
+            else {
+                alert('아이디와 비밀번호를 확인해주세요');
+            }
+        })
+    }
+
+    const checkId = e => {
+        setId(e.target.value);
+    }
+    const checkPw = e => {
+        setPassword(e.target.value)
+    }
+
     return (
         <S.Size>
             <S.Title>
@@ -10,9 +38,9 @@ const LogIn = () => {
                 <S.UnderLine />
             </S.Title>
             <S.Inputs>
-                <S.Input placeholder='아이디를 입력해주세요'/>
-                <S.Input placeholder='비밀번호를 입력해주세요'/>
-                <S.LogInBtn>로그인</S.LogInBtn>
+                <S.Input placeholder='아이디를 입력해주세요' onChange={checkId}/>
+                <S.Input placeholder='비밀번호를 입력해주세요' onChange={checkPw}/>
+                <S.LogInBtn onClick={onLoginBtnClick}>로그인</S.LogInBtn>
                 <div>
                     <S.NoAccount>
                         <Link to='/signup'>
