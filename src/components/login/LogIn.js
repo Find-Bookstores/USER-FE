@@ -8,10 +8,13 @@ const LogIn = () => {
     const [password, setPassword] = useState('');
 
     const onLoginBtnClick = () => {
-        axios.post('http://10.156.147.138:8888/login', {id, password})
+        axios.post('http://10.156.147.138:8888/login', {
+            id,
+            password
+        })
         .then((res) => {
             const accessToken = res.data.accessToken;
-            localStorage.setItem(accessToken);
+            localStorage.setItem('token', accessToken);
             console.log('success');
         })
         .catch((err) => {
