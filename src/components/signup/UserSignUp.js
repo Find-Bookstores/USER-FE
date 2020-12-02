@@ -11,7 +11,11 @@ const UserSignUp = () => {
     const onJoinBtnClick = (e) => {
         if(id !== '' && password !== '' && pwConfirm !== '' && name !== '') {
             if(password === pwConfirm) {
-                axios.post('http://10.156.147.138:8888/user/signup', {id, password, name})
+                axios.post('http://10.156.147.138:8888/user/signup', {
+                    id,
+                    password,
+                    name
+                })
                 .then((res) => {
                     alert('회원가입 성공!');
                     console.log('ok');

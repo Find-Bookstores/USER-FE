@@ -12,7 +12,12 @@ const StoreUserSignUp = () => {
     const onJoinBtnClick = e => {
         if(id !== '' && password !== '' && pwConfirm !== '' && storeName !== '' && address !== '') {
             if(password === pwConfirm) {
-                axios.post('http://10.156.147.138:8888/storeuser/signup', {id, password, storeName, address})
+                axios.post('http://10.156.147.138:8888/storeuser/signup', {
+                    id,
+                    password,
+                    storeName,
+                    address
+                })
                 .then((res) => {
                     alert('회원가입 성공!');
                 })
