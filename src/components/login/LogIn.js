@@ -4,23 +4,21 @@ import { Link } from 'react-router-dom';
 import * as S from './style';
 
 const LogIn = () => {
-    // const JWT_EXPIRY_TIME = 24 * 3600 * 1000;
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
 
     const onLoginBtnClick = () => {
-        axios.post('http://10.156.147.138:8080/user/login', {id, password})
-        .then((res, {accessToken}) => {
-            axios.defaults.headers.common['Authorization'] = {accessToken};
+        axios.post('http://10.156.147.138:8888/login', {id, password})
+        .then((res) => {
+            const accessToken = res.data.accessToken;
+            localStorage.setItem(accessToken);
             console.log('success');
         })
         .catch((err) => {
-            if(err.response.status === 404) {
+            if(err.status === 404) {
                 alert('존재하지 않는 아이디입니다');
             }
-            else {
-                alert('아이디와 비밀번호를 확인해주세요');
-            }
+            else alert('아이디와 비밀번호를 확인해주세요');
         })
     }
 
