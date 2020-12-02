@@ -1,13 +1,28 @@
 import React, { useState } from 'react';
 import * as S from './style';
 import { WhiteStar, YellowStar } from '../../assets';
+import axios from 'axios';
 
 const StoreInfo = () => {
     const [isStarClick, setIsStarClick] = useState(false);
 
     const onStarClick = e => {
-        setIsStarClick(!isStarClick);
-        console.log(isStarClick);
+        setIsStarClick(true);
+        axios.put('http://10.156.147.138:8888/store/favoritestore', {
+            body: {
+                userId: 'userId',
+                storeId: 'storeId'
+            },
+            headers: {
+                token: localStorage.getItem()
+            }
+        })
+        .then((res) => {
+            console.log('ok');
+        })
+        .catch((err) => {
+            console.log(err);
+        })
     }
 
     return (
