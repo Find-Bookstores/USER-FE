@@ -8,7 +8,7 @@ const StoreUserInfo = () => {
 
     const onModifyBtnClick = e => {
         if(password === pwConfirm) {
-            axios.put('ttp://10.156.147.138:8080/user/mypage/update', {password})
+            axios.put('ttp://10.156.147.138:8888/user/mypage/update', {password})
             .then((res) => {
                 console.log('ok');
             })
